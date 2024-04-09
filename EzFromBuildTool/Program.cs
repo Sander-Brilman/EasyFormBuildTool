@@ -21,9 +21,7 @@ var app = builder.Build();
 
 app.Run(async (SettingsService settingsService, SettingsValidator validator) =>
 {
-    bool hasSettingsFile = settingsService.IsSettingsFileAvailable();
-
-    if (hasSettingsFile is false)
+    if (settingsService.IsSettingsFileAvailable() is false)
     {
         WriteLine($"No settings file with the name {SettingsService.SettingsFileName} is in the current directory");
         bool createFile = PromptYesNo("Would you like to generate an example settings file");
@@ -31,8 +29,7 @@ app.Run(async (SettingsService settingsService, SettingsValidator validator) =>
         if (createFile)
         {
             await settingsService.GenerateExampleSettingsFile();
-            WriteLine($"\nExample settings file with name {SettingsService.SettingsFileName} was generated in the current directory");
-            WriteLine($"Edit the settings then re-run the program\n\n");
+            WriteLine($"\nExample settings file with name {SettingsService.SettingsFileName} was generated in the current directory\nEdit the settings then re-run the program\n\n");
         }
 
         return;
@@ -54,10 +51,12 @@ app.Run(async (SettingsService settingsService, SettingsValidator validator) =>
 
     WriteLine("\n[== Begin processing ==]\n");
 
+    
     await CssParserPipeline
         .Build(settings)
-        .AddStep<CssInternalVariableRenamingProccess>("InternalVariableRenaming")
-        .AddStep<CssSelectorNestingProccess>("SelectorNesting")
+        .AddStep<CssVariablePrefixingProcess>("non-internal variable prefixing")
+        .AddStep<CssInternalVariableRenamingProccess>("Internal variable renaming")
+        .AddStep<CssSelectorNestingProccess>("selector nesting")
         .AddStep<MinifyCssProccess>("Minifing")
         .RunAsync();
 });

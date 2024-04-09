@@ -14,6 +14,7 @@ internal class CssInternalVariableRenamingProccess : ICssProcessStep
 
         HashSet<string> internalVariables = [];
 
+        // find all internal variabled
         foreach (string line in lines)
         {
             if (line.TrimStart().StartsWith($"--{settings.CssInternalVariableOldPrefix}") is false)
@@ -31,6 +32,7 @@ internal class CssInternalVariableRenamingProccess : ICssProcessStep
             internalVariables.Add(internalVariable);
         }
 
+        // replace all internal variables
         foreach (string internalVariable in internalVariables)
         {
             string replacement = Random.Shared.RandomCssVariableName(
