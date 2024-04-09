@@ -5,7 +5,7 @@ internal static class RandomExtentions
 {
     private static readonly HashSet<string> _usedVariables = [];
 
-    private static readonly char[] _validCssVariableCharacters = "12345678990qwertyuiopasdfghjklzxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM-_".ToCharArray();
+    private static readonly char[] _validCssVariableCharacters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM".ToCharArray();
 
     private static string RandomVariableSafeString(int length)
     {

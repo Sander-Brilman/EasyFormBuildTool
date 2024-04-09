@@ -10,6 +10,7 @@ using OneOf;
 using OneOf.Types;
 using static VStyle.Extentions.ConsoleInteractions;
 using static System.Console;
+using VStyleBuildTool.Parser.Steps;
 
 
 var builder = CoconaApp.CreateBuilder();
@@ -54,9 +55,10 @@ app.Run(async (SettingsService settingsService, SettingsValidator validator) =>
     
     await CssParserPipeline
         .Build(settings)
-        .AddStep<CssVariablePrefixingProcess>("non-internal variable prefixing")
-        .AddStep<CssInternalVariableRenamingProccess>("Internal variable renaming")
+        .AddStep<CssVariablePrefixingProcess>("prefixing")
+        .AddStep<CssVariableInliningProcess>("Inlining")
+        .AddStep<CssInternalVariableRenamingProccess>("renaming")
         .AddStep<CssSelectorNestingProccess>("selector nesting")
-        .AddStep<MinifyCssProccess>("Minifing")
+        .AddStep<MinifyCssProccess>("minifing")
         .RunAsync();
 });
