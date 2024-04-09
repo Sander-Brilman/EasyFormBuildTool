@@ -1,11 +1,11 @@
-﻿using EzFromBuildTool.Parser.Steps;
+﻿using VFormStyles.Parser.Steps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EzFromBuildTool.Parser;
+namespace VFormStyles.Parser;
 internal class CssParserPipeline
 {
     public static CssParserPipeline Build(CssParserSettings settings)
@@ -17,7 +17,7 @@ internal class CssParserPipeline
                 $""""
                 
                 /*
-                [= EasyFormBuildTool =]
+                [= VFormStyles Build Tool =]
                 Source code from file `{cssFile}`
                 */
 
@@ -60,7 +60,7 @@ internal class CssParserPipeline
 
             if (_settings.SaveBuildProcessSteps)
             {
-                string fileName = $"EasyFormsBuildTool_Step_{stepCount}_{stepName}.css";
+                string fileName = $"VFormStyles Build Tool Step-{stepCount} {stepName}.css";
 
                 Console.WriteLine($"Saving step `{stepName}` result as `{fileName}` in output directory");
                 SaveCssInOutputDirectory(fileName);

@@ -1,4 +1,4 @@
-﻿namespace EzFromBuildTool.Parser;
+﻿namespace VFormStyles.Parser;
 public class CssParserSettings
 {
     public required string[] CssFiles { get; init; }

@@ -4,5 +4,5 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EzFromBuildTool.Results;
+namespace VFormStyles.Results;
 public record struct ErrorMessage(string Message);

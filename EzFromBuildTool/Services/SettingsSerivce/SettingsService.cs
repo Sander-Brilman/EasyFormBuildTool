@@ -1,13 +1,13 @@
-﻿using EzFromBuildTool.Extentions;
-using EzFromBuildTool.Parser;
-using EzFromBuildTool.Services.Scanner;
-using EzFromBuildTool.Services.Validator;
+﻿using VFormStyles.Extentions;
+using VFormStyles.Parser;
+using VFormStyles.Services.Scanner;
+using VFormStyles.Services.Validator;
 using System.Text.Json;
 
-namespace EzFromBuildTool.Services.SettingsSerivce;
+namespace VFormStyles.Services.SettingsSerivce;
 public class SettingsService
 {
-    public const string SettingsFileName = "EasyFormBuildConfig.json";
+    public const string SettingsFileName = "VFormStylesBuildConfig.json";
 
     private readonly string _currentDirectory = Directory.GetCurrentDirectory();
 
@@ -60,14 +60,14 @@ public class SettingsService
         {
             CssFiles = cssFiles,
             OutputDirectory = "C:/Path/To/OutputDirectory",
-            FinalResultFileName = "EasyFormFinalResult.css",
+            FinalResultFileName = "VFormStylesFinalResult.css",
             SaveBuildProcessSteps = false,
 
             CssInternalVariableOldPrefix = "internal",
-            CssInternalVariableNewPrefix = "i",
-            CssInternalVariableRandomCharacterCount = 2,
+            CssInternalVariableNewPrefix = "\\/",
+            CssInternalVariableRandomCharacterCount = 1,
 
-            CssNonInternalVariableNewPrefix = "esy-",
+            CssNonInternalVariableNewPrefix = "\\/",
         };
 
         string json = JsonSerializer.Serialize(settings);

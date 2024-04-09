@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EzFromBuildTool.Services.Scanner;
+namespace VFormStyles.Services.Scanner;
 internal class DirectoryScanner
 {
     private static string[] GetRecursiveFilesFromDirectory(string directory)

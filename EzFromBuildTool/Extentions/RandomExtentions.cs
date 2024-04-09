@@ -1,11 +1,11 @@
 ﻿using System.Security.Cryptography;
 
-namespace EzFromBuildTool.Extentions;
+namespace VFormStyles.Extentions;
 internal static class RandomExtentions
 {
     private static readonly HashSet<string> _usedVariables = [];
 
-    private static readonly char[] _validCssVariableCharacters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM-_".ToCharArray();
+    private static readonly char[] _validCssVariableCharacters = "12345678990qwertyuiopasdfghjklzxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM-_".ToCharArray();
 
     private static string RandomVariableSafeString(int length)
     {
@@ -19,7 +19,7 @@ internal static class RandomExtentions
         int count = 0;
         do
         {
-            if (count > 5000)// failsafe
+            if (count > 5000)// failsafe to prevent an endless loop when all possible combinations have been used
             {
                 throw new InvalidOperationException("Ran out of unqiue strings for css variables, increase the limit in the settings");
             }
@@ -32,3 +32,4 @@ internal static class RandomExtentions
         return variable;
     }
 }
+

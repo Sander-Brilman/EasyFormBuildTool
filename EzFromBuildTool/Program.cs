@@ -1,14 +1,14 @@
 ﻿using Cocona;
-using EzFromBuildTool.Parser;
-using EzFromBuildTool.Parser.Steps;
-using EzFromBuildTool.Results;
-using EzFromBuildTool.Services.Scanner;
-using EzFromBuildTool.Services.SettingsSerivce;
-using EzFromBuildTool.Services.Validator;
+using VFormStyles.Parser;
+using VFormStyles.Parser.Steps;
+using VFormStyles.Results;
+using VFormStyles.Services.Scanner;
+using VFormStyles.Services.SettingsSerivce;
+using VFormStyles.Services.Validator;
 using Microsoft.Extensions.DependencyInjection;
 using OneOf;
 using OneOf.Types;
-using static EzFromBuildTool.Extentions.ConsoleInteractions;
+using static VFormStyles.Extentions.ConsoleInteractions;
 using static System.Console;
 
 

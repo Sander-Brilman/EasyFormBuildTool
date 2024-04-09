@@ -1,11 +1,11 @@
-﻿using EzFromBuildTool.Extentions;
+﻿using VFormStyles.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EzFromBuildTool.Parser.Steps;
+namespace VFormStyles.Parser.Steps;
 internal class CssInternalVariableRenamingProccess : ICssProcessStep
 {
     public async Task<string> ProcessCss(string cssCode, CssParserSettings settings)

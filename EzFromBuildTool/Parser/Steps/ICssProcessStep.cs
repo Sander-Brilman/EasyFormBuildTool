@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EzFromBuildTool.Parser.Steps;
+namespace VFormStyles.Parser.Steps;
 internal interface ICssProcessStep
 {
     Task<string> ProcessCss(string cssCode, CssParserSettings settings); 

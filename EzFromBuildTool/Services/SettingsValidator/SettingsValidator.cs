@@ -1,9 +1,9 @@
-﻿using EzFromBuildTool.Parser;
-using EzFromBuildTool.Results;
+﻿using VFormStyles.Parser;
+using VFormStyles.Results;
 using OneOf;
 using OneOf.Types;
 
-namespace EzFromBuildTool.Services.Validator;
+namespace VFormStyles.Services.Validator;
 public class SettingsValidator
 {
     public OneOf<Success, ErrorMessage> ValidateSettings(CssParserSettings settings)
@@ -24,6 +24,11 @@ public class SettingsValidator
         if (settings.CssNonInternalVariableNewPrefix.StartsWith("--") || settings.CssInternalVariableNewPrefix.StartsWith("--"))
         {
             return new ErrorMessage($"Css variable prefixes dont need to contain the `--` at the start. this is automatically taken care of");
+        }
+
+        if (settings.CssInternalVariableRandomCharacterCount <= 0)
+        {
+            return new ErrorMessage($"{nameof(settings.CssInternalVariableRandomCharacterCount)} cannot be less then or euqal to 0. atleast 1 random character is required to make each variable unique");
         }
 
         static bool IsValidFilename(string fileName) => 
