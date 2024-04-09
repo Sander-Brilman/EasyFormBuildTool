@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VFormStyles.Services.Scanner;
+namespace VStyle.Services.Scanner;
 internal class DirectoryScanner
 {
     private static string[] GetRecursiveFilesFromDirectory(string directory)

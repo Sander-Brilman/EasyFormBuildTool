@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VFormStyles.Extentions;
+namespace VStyle.Extentions;
 public static class ConsoleInteractions
 {
     public static string PromptString(string question, string? defaultValueIfLeftEmpty)

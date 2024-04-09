@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace VFormStyles.Extentions;
+namespace VStyle.Extentions;
 internal static class RandomExtentions
 {
     private static readonly HashSet<string> _usedVariables = [];

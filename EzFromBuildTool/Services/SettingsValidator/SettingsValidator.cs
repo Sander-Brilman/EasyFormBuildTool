@@ -1,9 +1,9 @@
-﻿using VFormStyles.Parser;
-using VFormStyles.Results;
+﻿using VStyle.Parser;
+using VStyle.Results;
 using OneOf;
 using OneOf.Types;
 
-namespace VFormStyles.Services.Validator;
+namespace VStyle.Services.Validator;
 public class SettingsValidator
 {
     public OneOf<Success, ErrorMessage> ValidateSettings(CssParserSettings settings)

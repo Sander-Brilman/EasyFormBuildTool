@@ -1,4 +1,4 @@
-﻿namespace VFormStyles.Parser;
+﻿namespace VStyle.Parser;
 public class CssParserSettings
 {
     public required string[] CssFiles { get; init; }

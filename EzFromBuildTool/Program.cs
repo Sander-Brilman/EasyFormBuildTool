@@ -1,14 +1,14 @@
 ﻿using Cocona;
-using VFormStyles.Parser;
-using VFormStyles.Parser.Steps;
-using VFormStyles.Results;
-using VFormStyles.Services.Scanner;
-using VFormStyles.Services.SettingsSerivce;
-using VFormStyles.Services.Validator;
+using VStyle.Parser;
+using VStyle.Parser.Steps;
+using VStyle.Results;
+using VStyle.Services.Scanner;
+using VStyle.Services.SettingsSerivce;
+using VStyle.Services.Validator;
 using Microsoft.Extensions.DependencyInjection;
 using OneOf;
 using OneOf.Types;
-using static VFormStyles.Extentions.ConsoleInteractions;
+using static VStyle.Extentions.ConsoleInteractions;
 using static System.Console;
 
 

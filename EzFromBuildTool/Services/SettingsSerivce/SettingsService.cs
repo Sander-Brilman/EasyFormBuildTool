@@ -1,13 +1,13 @@
-﻿using VFormStyles.Extentions;
-using VFormStyles.Parser;
-using VFormStyles.Services.Scanner;
-using VFormStyles.Services.Validator;
+﻿using VStyle.Extentions;
+using VStyle.Parser;
+using VStyle.Services.Scanner;
+using VStyle.Services.Validator;
 using System.Text.Json;
 
-namespace VFormStyles.Services.SettingsSerivce;
+namespace VStyle.Services.SettingsSerivce;
 public class SettingsService
 {
-    public const string SettingsFileName = "VFormStylesBuildConfig.json";
+    public const string SettingsFileName = "VStyleBuildConfig.json";
 
     private readonly string _currentDirectory = Directory.GetCurrentDirectory();
 
@@ -40,8 +40,6 @@ public class SettingsService
 
         string? sourceDirectory = Console.ReadLine();
 
-        bool test = string.IsNullOrEmpty(sourceDirectory);
-
         while (string.IsNullOrEmpty(sourceDirectory) is false && Directory.Exists(sourceDirectory) is false)
         {
             Console.WriteLine("\nThe directory provided does not exist, try again or leave empty to skip");
@@ -60,7 +58,7 @@ public class SettingsService
         {
             CssFiles = cssFiles,
             OutputDirectory = "C:/Path/To/OutputDirectory",
-            FinalResultFileName = "VFormStylesFinalResult.css",
+            FinalResultFileName = "VStyleFinalResult.css",
             SaveBuildProcessSteps = false,
 
             CssInternalVariableOldPrefix = "internal",

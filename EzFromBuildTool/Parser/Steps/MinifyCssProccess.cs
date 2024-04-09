@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VFormStyles.Parser.Steps;
+namespace VStyle.Parser.Steps;
 internal class MinifyCssProccess : ICssProcessStep
 {
     public async Task<string> ProcessCss(string cssCode, CssParserSettings settings)

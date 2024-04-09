@@ -1,11 +1,11 @@
-﻿using VFormStyles.Extentions;
+﻿using VStyle.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VFormStyles.Parser.Steps;
+namespace VStyle.Parser.Steps;
 internal class CssInternalVariableRenamingProccess : ICssProcessStep
 {
     public async Task<string> ProcessCss(string cssCode, CssParserSettings settings)

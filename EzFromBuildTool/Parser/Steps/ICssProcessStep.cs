@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VFormStyles.Parser.Steps;
+namespace VStyle.Parser.Steps;
 internal interface ICssProcessStep
 {
     Task<string> ProcessCss(string cssCode, CssParserSettings settings); 

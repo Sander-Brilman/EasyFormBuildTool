@@ -1,11 +1,11 @@
-﻿using VFormStyles.Parser.Steps;
+﻿using VStyle.Parser.Steps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VFormStyles.Parser;
+namespace VStyle.Parser;
 internal class CssParserPipeline
 {
     public static CssParserPipeline Build(CssParserSettings settings)
@@ -17,7 +17,7 @@ internal class CssParserPipeline
                 $""""
                 
                 /*
-                [= VFormStyles Build Tool =]
+                [= VStyle Build Tool =]
                 Source code from file `{cssFile}`
                 */
 
@@ -60,7 +60,7 @@ internal class CssParserPipeline
 
             if (_settings.SaveBuildProcessSteps)
             {
-                string fileName = $"VFormStyles Build Tool Step-{stepCount} {stepName}.css";
+                string fileName = $"VStyle Build Tool Step-{stepCount} {stepName}.css";
 
                 Console.WriteLine($"Saving step `{stepName}` result as `{fileName}` in output directory");
                 SaveCssInOutputDirectory(fileName);
