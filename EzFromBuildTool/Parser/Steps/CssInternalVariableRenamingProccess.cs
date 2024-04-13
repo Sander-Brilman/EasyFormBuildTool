@@ -12,12 +12,14 @@ internal class CssInternalVariableRenamingProccess : ICssProcessStep
     {
         string[] lines = cssCode.Split('\n');
 
+        string internalVariablePrefix = $"--{settings.CssInternalVariableOldPrefix}";
+
         HashSet<string> internalVariables = [];
 
-        // find all internal variabled
+        // find all internal variables
         foreach (string line in lines)
         {
-            if (line.TrimStart().StartsWith($"--{settings.CssInternalVariableOldPrefix}") is false)
+            if (line.TrimStart().StartsWith(internalVariablePrefix) is false)
             {
                 continue;
             }

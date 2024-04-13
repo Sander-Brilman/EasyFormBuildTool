@@ -56,8 +56,8 @@ app.Run(async (SettingsService settingsService, SettingsValidator validator) =>
     await CssParserPipeline
         .Build(settings)
         .AddStep<CssVariablePrefixingProcess>("prefixing")
+        .AddStep<CssInternalVariableRenamingProccess>("renaming internal variables")
         .AddStep<CssVariableInliningProcess>("Inlining")
-        .AddStep<CssInternalVariableRenamingProccess>("renaming")
         .AddStep<CssSelectorNestingProccess>("selector nesting")
         .AddStep<MinifyCssProccess>("minifing")
         .RunAsync();
